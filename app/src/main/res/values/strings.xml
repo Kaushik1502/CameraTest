@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CameraTest</string>
+    <string name="single_string">Single String</string>
+    <string name="access_denied">Access Denied</string>
+    <string name="profile_pic">Select Profile Picture</string>
+    <string name="openbottomsheet">Open Bottom Sheet</string>
+    <string name="global_string">Global String</string>
+</resources>
