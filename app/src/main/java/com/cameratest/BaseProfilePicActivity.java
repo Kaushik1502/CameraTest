@@ -223,7 +223,7 @@ public abstract class BaseProfilePicActivity extends AppCompatActivity {
     private boolean verifyGalleryPermission() {
         if (checkSelfPermission(PERMISSION_STORAGE[0]) != PackageManager.PERMISSION_GRANTED) {
             if (shouldShowRequestPermissionRationale(PERMISSION_STORAGE[0])) {
-                displayPermissionDialog("Would like to grant access to slonkit to read your gallery", new String[]{PERMISSION_STORAGE[0]}, REQUEST_PERMISSION);
+                displayPermissionDialog("Would like to grant access to CameraTest to read your gallery", new String[]{PERMISSION_STORAGE[0]}, REQUEST_PERMISSION);
             } else {
                 requestPermissions(new String[]{PERMISSION_STORAGE[0]}, REQUEST_PERMISSION);
             }
@@ -238,7 +238,7 @@ public abstract class BaseProfilePicActivity extends AppCompatActivity {
             if (permissionsNeeded.size() > 0 && !isFirstTime) {
                 for (String permission : permissionsNeeded) {
                     if (shouldShowRequestPermissionRationale(permission)) {
-                        displayPermissionDialog("Would like to grant access to slonkit to take picture from camera", PERMISSION_STORAGE, REQUEST_MULTIPLE_PERMISSION);
+                        displayPermissionDialog("Would like to grant access to CameraTest to take picture from camera", PERMISSION_STORAGE, REQUEST_MULTIPLE_PERMISSION);
                         break;
                     }
                 }
