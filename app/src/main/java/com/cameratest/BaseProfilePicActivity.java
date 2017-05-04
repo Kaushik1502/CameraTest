@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v4.content.FileProvider;
 import android.support.v4.os.AsyncTaskCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -148,7 +149,8 @@ public abstract class BaseProfilePicActivity extends AppCompatActivity {
         try {
             f = mAlbumStorageDirFactory.setUpPhotoFile();
             mCurrentPhotoPath = f.getAbsolutePath();
-            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
+            Uri uri = FileProvider.getUriForFile(BaseProfilePicActivity.this, BaseProfilePicActivity.this.getApplicationContext().getPackageName() + ".provider", f);
+            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
             return takePictureIntent;
         } catch (IOException e) {
             e.printStackTrace();
